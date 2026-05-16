@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JEE Main Mock Exam</title>
+  
+  <link rel="stylesheet" href="mainsexam.css">
+</head>
+<body>
+
+<!-- INTRO / INSTRUCTIONS -->
+<div id="intro" class="card">
+  <h1><span id="head">JEE Main</span> Mock Exam</h1>
+  <h3>Title: <span id="title">Practice Test</span></h3>
+
+  <p><strong>Instructions:</strong></p>
+  <ul class="instruction-list">
+    <li>📝 Total Questions: <strong><span id="q">75-100</span></strong> (Apptitude + Mathematics)</li>
+    <li>⏱️ Total Duration: <strong><span id="t">180</span> minutes</strong></li>
+    <li>📘 Each subject has <strong>Section A (MCQ)</strong> and <strong>Section B (Numerical Answer)</strong></li>
+    <li>✅ Section A: <strong>+4 marks</strong> for each correct answer</li>
+    <li>🚫 Section A: <strong>−1 mark</strong> for each incorrect answer</li>
+    <li>🔢 Section B (NAQ): <strong>Attempt any 5 out of 10</strong> questions in mathematics</li>
+    <li>✅ Section B: <strong>+4 marks</strong> for each correct answer</li>
+    <li>🚫 Mathematics Section B: <strong>No negative marking</strong></li>
+    <li>🔄 <strong>Do not refresh</strong> or reload the page</li>
+    <li>📴 <strong>Do not switch tabs</strong> — <span class="violation">auto-submission</span></li>
+    <li>🛑 <strong>Right-click / keyboard shortcuts</strong> are violations</li>
+  </ul>
+
+  <button class="start-btn" onclick="startExam()">Start Exam</button>
+</div>
+
+<!-- EXAM UI -->
+<div id="exam" style="display:none;"></div>
+
+<!-- SUBMIT CARD -->
+<div id="submitCard" style="display:none; padding:20px; max-width:400px; margin:20px auto; text-align:center;">
+  <h2>Submission Summary</h2>
+  <p><strong>User ID:</strong> <span id="userIdDisplay"></span></p>
+  <p><strong>Total Questions:</strong> <span id="questionsAnswered"></span></p>
+  <p><strong>Correct:</strong> <span id="questionsCorrect"></span></p>
+  <p><strong>Wrong(MCQ only):</strong> <span id="questionsWrong"></span></p>
+  <p><strong>Marks Scored:</strong> <span id="marksScored"></span></p>
+  <button onclick="goBack()">Go Back</button>
+</div>
+
+<!-- MESSAGE -->
+<div id="message" style="display:none;"></div>
+
+<!-- VIOLATION + START LOGIC -->
+<script>
+let violationCount = 0;
+
+
+function startExam() {
+  document.documentElement.requestFullscreen?.();
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("exam").style.display = "block";
+  renderExamUI();
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden && !examSubmitted) submitExam();
+});
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+</script>
+
+<!-- MAIN EXAM SCRIPT -->
+<script src="mainspaper2exam.js"></script>
+
+</body>
+</html>

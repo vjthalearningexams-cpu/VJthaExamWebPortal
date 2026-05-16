@@ -1,0 +1,257 @@
+body {
+  overflow-x: hidden;
+}
+
+.card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card h3 span {
+  color: #3498db;
+}
+
+.instruction-list {
+  text-align: left;
+  padding: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.instruction-list li {
+  margin-bottom: 12px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #3498db;
+  transition: background-color 0.3s;
+}
+
+.instruction-list li:hover {
+  background-color: #e3f2fd;
+}
+
+.violation {
+  color: red;
+  font-weight: bold;
+}
+
+.start-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #218838;
+}
+
+.question-header {
+    background-color: #e6f0ff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  min-width: 150px;
+}
+
+.actions button:hover {
+  background-color: #0d47a1;
+}
+
+  
+  .status-panel {
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+    font-size: 14px;
+  }
+  
+  .status-panel div {
+    margin: 5px 0;
+  }
+  
+  .status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid #333;
+  }
+  
+  .answered { background-color: green; }
+  .not-answered { background-color: red; }
+  .not-visited { background-color: gray; }
+  .review { background-color: purple; }
+  
+  .sidebar {
+    width: 25%;
+    background: #f5f5f5;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .palette-btn {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .palette-btn.answered { background-color: green; }
+  .palette-btn.not-answered { background-color: red; }
+  .palette-btn.not-visited { background-color: gray; }
+  .palette-btn.marked { background-color: orange; }
+  
+
+  .status-panel {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .status-panel div {
+    margin-bottom: 6px;
+  }
+  
+  .status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
+  .status-dot.answered { background-color: green; }
+  .status-dot.not-answered { background-color: red; }
+  .status-dot.not-visited { background-color: gray; }
+  .status-dot.review { background-color: purple; }
+  
+  
+  /* Button colors */
+  .palette-btn.answered {
+    background-color: green;
+    color: white;
+  }
+  
+  .palette-btn.not-answered {
+    background-color: red;
+    color: white;
+  }
+  
+  .palette-btn.marked {
+    background-color: purple;
+    color: white;
+  }
+  
+  .palette-btn.visited {
+    border: 2px solid blue;
+  }
+
+  #question-palette{
+    height: 50vh;
+    overflow-y: auto;
+  }
+
+  .time{
+    margin-left: 50vw;
+  }
+
+  .exam-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .question-img{
+      width: 100%;
+      max-width: 80%;
+    }
+    .exam-layout {
+      flex-direction: column;
+    }
+  
+    .question-section,
+    .sidebar {
+      width: 100%;
+      display: block;
+    }
+  
+    .sidebar {
+      position: static;
+      height: auto;
+    }
+  
+    .time {
+      margin-left: 15vw;
+    }
+  }
+  
+  
+  
